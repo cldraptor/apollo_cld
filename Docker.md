@@ -23,6 +23,7 @@ docker可以理解为一台虚拟机，就像VMware一样，在上面可以安�
 
 
 ## 三.docker常用命令：
+sudo docker version或者sudo docker -v：查看安装好的docker信息
 sudo docker load -i  ./xxx.tar ： 将tar包导入为本地镜像  
 sudo docker images 或者sudo docker image ls ：列出所有镜像  
 sudo docker ps -a ：列出所有容器  
