@@ -19,4 +19,40 @@ docker可以理解为一台虚拟机，就像VMware一样，在上面可以安�
 2.  
 
 
-安装docker官网教程https://docs.docker.com/install/linux/docker-ce/ubuntu/
+安装docker官网教程https://docs.docker.com/install/linux/docker-ce/ubuntu/  
+
+
+## 三.docker常用命令：
+sudo docker load -i  ./xxx.tar ： 将tar包导入为本地镜像  
+sudo docker images 或者sudo docker image ls ：列出所有镜像  
+sudo docker ps -a ：列出所有容器  
+sudo docker ps   ：查看容器运行状态  
+sudo docker ps -l ：查看最后一次运行的容器
+sudo docker  run -it ID或name  ：启动容器  
+sudo docker stop ID或name  ：停止容器  
+sudo docker rm ID或name    ：删除容器  
+sudo docker rmi ID或name ：删除镜像  
+
+1.停止所有的container，这样才能够删除其中的images：  
+
+docker stop $(docker ps -a -q)  
+
+如果想要删除所有container的话再加一个指令：  
+
+docker rm $(docker ps -a -q)  
+
+2.查看当前有些什么images  
+
+docker images  
+
+3.删除images，通过image的id来指定删除谁  
+
+docker rmi <image id>  
+
+想要删除untagged images，也就是那些id为<None>的image的话可以用  
+
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}")  
+
+要删除全部image的话  
+
+docker rmi $(docker images -q)  
