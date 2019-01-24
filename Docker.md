@@ -30,7 +30,8 @@ sudo docker ps -a ：列出所有容器
 sudo docker ps   ：查看容器运行状态  
 sudo docker ps -l ：查看最后一次运行的容器
 sudo docker  run -it ID或name  ：启动容器  
-sudo docker stop ID或name  ：停止容器  
+sudo docker stop ID或name  ：停止容器(stop给与一定的关闭时间交由容器自己保存状态，称为优雅的停止)  
+sudo docker kill ID或name ：直接关闭容器  
 sudo docker rm ID或name    ：删除容器  
 sudo docker rmi ID或name ：删除镜像  
 
