@@ -27,6 +27,7 @@ sudo docker version或者sudo docker -v：查看安装好的docker信息
 sudo docker load -i  ./xxx.tar ： 将tar包导入为本地镜像  
 sudo docker images 或者sudo docker image ls ：列出所有镜像  
 sudo docker run -it ID或name ：创建并启动容器（ID就是已经导入的镜像ID）  
+sudo docker start -i ID ：如果容器退出（exit命令），要重新启动容器则用该命令。  
 sudo docker ps -a ：查看已经创建的所有容器，包括停止的  
 sudo docker ps -s ：查看当前运行的容器  
 sudo docker ps -l ：查看最后一次创建并运行的容器  
